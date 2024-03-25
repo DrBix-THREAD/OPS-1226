@@ -41,9 +41,9 @@ jobs:
       run: terraform plan
 
     # Uncomment the following step to apply changes in main branch
-    # - name: Terraform Apply
-    #   if: github.ref == 'refs/heads/main'
-    #   run: terraform apply -auto-approve
+    - name: Terraform Apply
+      if: github.ref == 'refs/heads/main'
+      run: terraform apply -auto-approve
 
     - name: Install Checkov
       run: pip install checkov
