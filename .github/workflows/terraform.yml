@@ -8,14 +8,15 @@ on:
     branches:
       - main
 
+
+permissions:
+  id-token: write
+  contents: read
+
 jobs:
   terraform:
     name: 'Terraform'
     runs-on: ubuntu-latest
-
-    permissions:
-      id-token: write
-      contents: read
 
     steps:
     - name: Checkout code
@@ -29,7 +30,7 @@ jobs:
         role-session-name: GitHubActions
 
     - name: Setup Terraform
-      uses: hashicorp/setup-terraform@v3
+      uses: hashicorp/setup-terraform@v1
       with:
         terraform_version: 1.7.5
 
