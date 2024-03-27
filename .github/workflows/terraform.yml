@@ -8,9 +8,9 @@ on:
   pull_request:
     branches:
       - main
-  workflow_dispatch:
-    branches:
-      - main
+#  workflow_dispatch:
+#    branches:
+#      - main
 
 
 permissions:
@@ -34,7 +34,7 @@ jobs:
         role-session-name: GitHubActions
 
     - name: Setup Terraform
-      uses: hashicorp/setup-terraform@v1
+      uses: hashicorp/setup-terraform@v3
       with:
         terraform_version: 1.7.5
 
