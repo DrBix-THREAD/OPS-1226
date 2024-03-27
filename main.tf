@@ -21,7 +21,7 @@ resource "aws_sns_topic" "bucket_notifications" {
 }
 
 resource "aws_s3_bucket_notification" "bucket_notification" {
-  bucket = aws_s3_bucket.bucket.id
+  bucket = aws_s3_bucket.my_bucket.id
 
   topic {
     topic_arn     = aws_sns_topic.bucket_notifications.arn
