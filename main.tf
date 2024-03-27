@@ -13,7 +13,6 @@ provider "aws" {
 
 resource "aws_s3_bucket" "my_bucket" {
   bucket = "bix-bucket"
-  acl    = "private"
 }
 
 resource "aws_sns_topic" "bucket_notifications" {
