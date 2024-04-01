@@ -15,16 +15,16 @@ resource "aws_s3_bucket" "bix-bucket" {
   bucket = "bix-bucket"
 }
 
-resource "aws_sns_topic" "bucket_notifications" {
-  name = "bucket_notifications"
-}
+# resource "aws_sns_topic" "bucket_notifications" {
+#   name = "bucket_notifications"
+# }
 
-resource "aws_s3_bucket_notification" "bucket_notification" {
-  bucket = aws_s3_bucket.bix-bucket.id
+# resource "aws_s3_bucket_notification" "bucket_notification" {
+#   bucket = aws_s3_bucket.bix-bucket.id
 
-  topic {
-    topic_arn     = aws_sns_topic.bucket_notifications.arn
-    events        = ["s3:ObjectCreated:*"]
-    filter_prefix = "logs/"
-  }
-}
+#   topic {
+#     topic_arn     = aws_sns_topic.bucket_notifications.arn
+#     events        = ["s3:ObjectCreated:*"]
+#     filter_prefix = "logs/"
+#   }
+# }
